@@ -1,6 +1,6 @@
 # vue-learn-timeline
 
-> A Vue.js project
+> A Vue.js learn project
 
 ## Build Setup
 

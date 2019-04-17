@@ -21,9 +21,10 @@ html,body,#app{
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: #fff;
   background: url("./assets/bg.jpg") no-repeat;
   background-position: center;
   background-size: cover;
+  overflow: auto;
 }
 </style>
