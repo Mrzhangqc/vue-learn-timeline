@@ -1,12 +1,17 @@
 <template>
   <div id="app">
-    <router-view/>
+    <index />
   </div>
 </template>
 
 <script>
+import index from './components/index.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    index
+  }
 }
 </script>
 
@@ -22,9 +27,6 @@ html,body,#app{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
-  background: url("./assets/bg.jpg") no-repeat;
-  background-position: center;
-  background-size: cover;
-  overflow: auto;
+  position: relative;
 }
 </style>
