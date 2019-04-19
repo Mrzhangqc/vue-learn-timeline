@@ -12,8 +12,8 @@
       >
          <el-submenu :index="item.level" v-for="(item,index) in menuList" :key="index">
           <template slot="title">{{item.name}}</template>
-          <el-menu-item :index="c_item.level" v-for="(c_item,c_index) in item.childern" :key="c_index"> 
-            <router-link to="c_item.path">{{c_item.name}}</router-link>
+          <el-menu-item :index="c_item.level" v-for="(c_item,c_index) in item.children" :key="c_index"> 
+            <router-link :to="c_item.path">{{c_item.name}}</router-link>
           </el-menu-item>
         </el-submenu>
       </el-menu>
@@ -36,7 +36,11 @@ export default {
         children: [{
           level: "1-1",
           name: "测试1",
-          path: "/index",
+          path: "/learn-lodash"
+        },{
+          level: "1-2",
+          name: "测试2",
+          path: "/index"
         }]
       },{
         level: "2",
@@ -70,11 +74,7 @@ export default {
   }
 }
 </script>
-</script>
 
-<style lang="less" scoped>
+<style lang="less">
   @import "../../styles/sidebar.less";
-  .scrollbar-wrapper{
-      overflow-x: hidden !important;
-  }
 </style>

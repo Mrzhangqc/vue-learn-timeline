@@ -1,7 +1,12 @@
 <template>
-    <div class="views-container">
+    <section class="app-main">
+      <transition name="fade-transform" mode="out-in">
         <router-view/>
-    </div>
+        <!-- <keep-alive :include="">
+           
+        </keep-alive> -->
+      </transition> 
+    </section>
 </template>
 
 <script>
@@ -11,5 +16,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+  .app-main{
+    background-color: #f0f2f5;
+  }
 </style>
