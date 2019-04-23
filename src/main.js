@@ -6,16 +6,22 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import axios from 'axios'
+import store from './store'
 
 Vue.use(ElementUI)
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 
+// 路由vuex
+const { routes } = router.options
+store.commit('SET_ROUTE', routes)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

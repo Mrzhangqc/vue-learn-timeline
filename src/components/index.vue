@@ -24,11 +24,6 @@ export default {
   },
   data () {
     return {}
-  },
-  mounted () {
-    this.$http.get('/api/data').then((res) => {
-      this.timeList = res.data.data || []
-    })
   }
 }
 </script>
