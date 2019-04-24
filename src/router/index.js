@@ -13,8 +13,7 @@ export default new Router({
       path: '/',
       name: 'index',
       meta: {
-        title: '首页',
-        level: 1
+        title: '首页'
       },
       component: LearnTimeLine
     },
@@ -22,8 +21,7 @@ export default new Router({
       path: '/learn-lodash',
       name: 'learn-lodash',
       meta: {
-        title: 'Lodash学习',
-        level: 2
+        title: 'Lodash学习'
       },
       component: LearnLodash
     },
@@ -31,8 +29,7 @@ export default new Router({
       path: '/learn-git',
       name: 'learn-git',
       meta: {
-        title: 'Git学习',
-        level: 3
+        title: 'Git学习'
       },
       component: LearnGit
     }

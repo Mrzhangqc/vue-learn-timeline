@@ -1,42 +1,29 @@
-#app {
+.sidebar-container {
+  transition: width 0.28s;
+  background-color: #393e46;
+  height: 100%;
+  position: fixed;
+  font-size: 0px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1001;
+  overflow: hidden;
 
-  @sideBarWidth: 210px;
-  
-  .main-container {
-    min-height: 100%;
-    transition: margin-left .28s;
-    margin-left: @sideBarWidth;
-    position: relative;
+  // reset element-ui css
+  .horizontal-collapse-transition {
+    transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
   }
 
-  .sidebar-container {
-    transition: width 0.28s;
-    width: @sideBarWidth !important;
-    background-color: '#fff';
+  .scrollbar-wrapper{
+    overflow-x: hidden !important;
+  }
+
+  .el-scrollbar__bar.is-vertical {
+    right: 0px;
+  }
+
+  .el-scrollbar {
     height: 100%;
-    position: fixed;
-    font-size: 0px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1001;
-    overflow: hidden;
-
-    // reset element-ui css
-    .horizontal-collapse-transition {
-      transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
-    }
-
-    .scrollbar-wrapper{
-      overflow-x: hidden !important;
-    }
-
-    .el-scrollbar__bar.is-vertical {
-      right: 0px;
-    }
-
-    .el-scrollbar {
-      height: 100%;
-    }
   }
 }

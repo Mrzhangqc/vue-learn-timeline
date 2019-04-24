@@ -3,19 +3,28 @@
       <el-menu
         :default-active="activeMenu"
         :collapse="isCollapse"
-        :background-color="`#fff`"
-        :text-color="`#303133`"
+        :background-color="menuConfig.bgColor"
+        :text-color="menuConfig.textColor"
         :unique-opened="false"
-        :active-text-color="`#409EFF`"
+        :active-text-color="menuConfig.activeTextColor"
         :collapse-transition="false"
         mode="vertical"
       >
-         <el-submenu :index="String(item.meta.level)" v-for="(item,index) in menuList" :key="index">
-          <template slot="title">{{item.meta.title}}</template>
-          <el-menu-item :index="c_item.level" v-for="(c_item,c_index) in item.children" :key="c_index">
-            <router-link :to="c_item.path">{{c_item.path}}</router-link>
-          </el-menu-item>
-        </el-submenu>
+        <div class="menu-wraper" v-for="(item,index) in menuList" :key="index">
+          <el-submenu :index="item.path" v-if="item.children && item.children.length">
+            <template slot="title">{{item.meta.title}}</template>
+             <router-link :to="c_item.path">
+              <el-menu-item :index="c_item.level" v-for="(c_item,c_index) in item.children" :key="c_index">
+                {{c_item.meta.title}}
+              </el-menu-item>
+             </router-link>
+          </el-submenu>
+           <router-link :to="item.path" v-else>
+              <el-menu-item :index="item.path">
+                {{item.meta.title}}
+              </el-menu-item>
+           </router-link>
+        </div>s
       </el-menu>
     </el-scrollbar>
 </template>
@@ -26,7 +35,13 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'Sidebar',
   data () {
-    return {}
+    return {
+      menuConfig: {
+        bgColor: '#393e46',
+        textColor: '#eeeeee',
+        activeTextColor: '#3f72af'
+      }
+    }
   },
   computed: {
     ...mapGetters({

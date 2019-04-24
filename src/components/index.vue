@@ -31,7 +31,13 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
   .index{
+    position: relative;
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
   }
+</style>
+<style lang="less">
+  @import url('../styles/index.less');
 </style>
