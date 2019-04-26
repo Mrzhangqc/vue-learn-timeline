@@ -10,7 +10,32 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    //代理配置
+    proxyTable: {
+      '/api': {
+        target: function (env) {
+          switch (env) {
+            case 'production':
+              return 'http://localhost:8080/';
+          
+            default:
+              return 'http://74.82.199.235:8088/api/';
+          }
+        }(process.env.BUILD_REV),
+        changeOrigin: true,
+        secure: false,
+        pathRewrite: {
+           '^/api': ''
+         }
+        //有时你不想代理所有的请求。可以基于一个函数的返回值绕过代理。
+        //  bypass: function(req, res, proxyOptions) {
+        //   if (req.headers.accept.indexOf('html') !== -1) {
+        //     console.log('Skipping proxy for browser request.');
+        //     return '/index.html';
+        //   }
+        // }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -23,7 +48,7 @@ module.exports = {
     // Use Eslint Loader?
     // If true, your code will be linted during bundling and
     // linting errors and warnings will be shown in the console.
-    useEslint: true,
+    useEslint: false,
     // If true, eslint errors and warnings will also be shown in the error overlay
     // in the browser.
     showEslintErrorsInOverlay: false,

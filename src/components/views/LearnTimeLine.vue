@@ -1,23 +1,11 @@
 <template>
     <div class="timeline-container">
         <el-timeline>
-            <el-timeline-item timestamp="2018/4/12" placement="top">
-            <el-card>
-                <h4>更新 Github 模板</h4>
-                <p>王小虎 提交于 2018/4/12 20:46</p>
-            </el-card>
-            </el-timeline-item>
-            <el-timeline-item timestamp="2018/4/3" placement="top">
-            <el-card>
-                <h4>更新 Github 模板</h4>
-                <p>王小虎 提交于 2018/4/3 20:46</p>
-            </el-card>
-            </el-timeline-item>
-            <el-timeline-item timestamp="2018/4/2" placement="top">
-            <el-card>
-                <h4>更新 Github 模板</h4>
-                <p>王小虎 提交于 2018/4/2 20:46</p>
-            </el-card>
+             <el-timeline-item v-for="(item,index) in timeList" :key="index" :timestamp="item.data" placement="top">
+                <el-card>
+                    <h4>{{item.name}}</h4>
+                    <p>{{`${item.desc} ${item.date} ${item.time}`}}</p>
+                </el-card>
             </el-timeline-item>
         </el-timeline>
     </div>
@@ -27,13 +15,25 @@
 export default {
   name: 'LearnTimeLine',
   data () {
-    return {}
+    return {
+      timeList: []
+    }
+  },
+  mounted () {
+    this.$http.get('api/index.json').then((res) => {
+      const { data } = res.data
+      this.timeList = data
+    }).catch((err) => {
+      console.log(err)
+    })
   }
 }
 </script>
 
 <style lang="less" scoped>
     .timeline-container{
-
+        .el-timeline{
+            padding: 40px;
+        }
     }
 </style>
