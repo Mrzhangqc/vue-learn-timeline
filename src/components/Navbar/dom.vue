@@ -4,7 +4,7 @@
         <el-breadcrumb-item v-for="(item,index) in routerList"
           v-show="item.path"
           :key="index"
-          :to="{ path: item.path }">
+          :to="item.path">
             {{item.name}}
           </el-breadcrumb-item>
       </el-breadcrumb>
@@ -12,24 +12,16 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'Navbar',
-  data: () => {
-    return {
-      routerList: [{
-        path: '/',
-        name: '首页'
-      }, {
-        path: '',
-        name: '活动管理'
-      }, {
-        path: '',
-        name: '活动列表'
-      }, {
-        path: '',
-        name: '活动详情'
-      }]
-    }
+  data () {
+    return {}
+  },
+  computed: {
+    ...mapGetters({
+      routerList: 'breadcrumb'
+    })
   }
 }
 </script>

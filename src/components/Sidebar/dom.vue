@@ -24,7 +24,7 @@
                 {{item.meta.title}}
               </el-menu-item>
            </router-link>
-        </div>s
+        </div>
       </el-menu>
     </el-scrollbar>
 </template>
@@ -58,10 +58,14 @@ export default {
       return false
     }
   },
+  watch: {
+    $route (to, from) {
+      this.$store.commit('SET_BREADCRUMB', [{path: to.path, name: to.meta.title}])
+    }
+  },
   mounted () {
-    // this.$http.get('/api/data').then((res) => {
-    //   this.timeList = res.data.data || []
-    // })
+    const route = [{path: this.$route.path, name: this.$route.meta.title}]
+    this.$store.commit('SET_BREADCRUMB', route)
   }
 }
 </script>

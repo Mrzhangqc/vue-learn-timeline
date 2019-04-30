@@ -1,7 +1,7 @@
 <template>
     <div class="timeline-container">
         <el-timeline>
-             <el-timeline-item v-for="(item,index) in timeList" :key="index" :timestamp="item.data" placement="top">
+             <el-timeline-item v-for="(item,index) in timeList" :key="index" :timestamp="item.date" placement="top">
                 <el-card>
                     <h4>{{item.name}}</h4>
                     <p>{{`${item.desc} ${item.date} ${item.time}`}}</p>
@@ -24,7 +24,7 @@ export default {
       const { data } = res.data
       this.timeList = data
     }).catch((err) => {
-      console.log(err)
+      this.$alert(err)
     })
   }
 }
@@ -33,7 +33,7 @@ export default {
 <style lang="less" scoped>
     .timeline-container{
         .el-timeline{
-            padding: 40px;
+            padding: 20px;
         }
     }
 </style>
