@@ -1,5 +1,5 @@
 <template>
-    <div class="timeline-container">
+    <div class="timeline-container" v-loading="loading">
         <el-timeline>
              <el-timeline-item v-for="(item,index) in timeList" :key="index" :timestamp="item.date" placement="top">
                 <el-card>
@@ -16,6 +16,7 @@ export default {
   name: 'LearnTimeLine',
   data () {
     return {
+      loading: true,
       timeList: []
     }
   },
@@ -23,8 +24,10 @@ export default {
     this.$http.get('api/index.json').then((res) => {
       const { data } = res.data
       this.timeList = data
+      this.loading = false
     }).catch((err) => {
       this.$alert(err)
+      this.loading = false
     })
   }
 }
@@ -32,6 +35,7 @@ export default {
 
 <style lang="less" scoped>
     .timeline-container{
+      min-height: 300px;
         .el-timeline{
             padding: 20px;
         }
