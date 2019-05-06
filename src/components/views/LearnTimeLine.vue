@@ -21,11 +21,10 @@ export default {
     }
   },
   mounted () {
-    this.$http.get('api/index.json').then((res) => {
-      const { data } = res.data
-      this.timeList = data
+    this.$http.get('index.json').then((res) => {
+      this.timeList = res.data
       this.loading = false
-    }).catch((err) => {
+    }).catch(err => {
       this.$alert(err)
       this.loading = false
     })

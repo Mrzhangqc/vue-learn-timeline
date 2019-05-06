@@ -63,8 +63,8 @@ export default {
     }
   },
   mounted () {
-    this.$http.get('api/learnGit.json').then((res) => {
-      const { data } = res.data
+    this.$http.get('learnGit.json').then((res) => {
+      const data = res.data
       this.total = data.length
       this.tableData = data
       this.handlePage()
