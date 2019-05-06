@@ -9,6 +9,11 @@ import store from './store'
 import axios from './common/axios'
 import * as types from './store/mutation-types'
 
+import VueCodemirror from 'vue-codemirror'
+// require styles
+import 'codemirror/lib/codemirror.css'
+Vue.use(VueCodemirror)
+
 Vue.use(ElementUI)
 Vue.prototype.$http = axios
 Vue.config.productionTip = false
