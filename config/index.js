@@ -16,8 +16,8 @@ module.exports = {
         target: function (env) {
           switch (env) {
             case 'production':
-              return 'http://localhost:8080/';
-          
+             // return 'http://localhost:8080/';
+             return 'http://74.82.199.235:8088/api/';
             default:
               return 'http://74.82.199.235:8088/api/';
           }
