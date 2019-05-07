@@ -12,6 +12,8 @@ import * as types from './store/mutation-types'
 import VueCodemirror from 'vue-codemirror'
 // require styles
 import 'codemirror/lib/codemirror.css'
+// language js
+import 'codemirror/mode/javascript/javascript.js'
 Vue.use(VueCodemirror)
 
 Vue.use(ElementUI)

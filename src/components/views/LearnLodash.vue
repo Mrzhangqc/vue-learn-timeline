@@ -3,7 +3,7 @@
     <el-col :md="6" :lg="6" :sm="12" :xs="24" v-for="(item,index) in apiList" :key="index">
       <div class="grid-container">
         <div class="grid-header">
-          <a href="http://lodash.net/docs/4.16.1.html#_compactarray" target="_blank">{{item.name}}</a>
+          <a :href="item.href" target="_blank">{{item.name}}</a>
         </div>
         <div class="grid-content">
           <div class="description">{{item.description}}</div>
@@ -17,7 +17,10 @@
 </template>
 
 <script>
-
+// theme css
+import 'codemirror/theme/3024-night.css'
+import 'codemirror/addon/scroll/simplescrollbars.js'
+import 'codemirror/addon/scroll/simplescrollbars.css'
 export default {
   name: 'LearnLodash',
   data () {
@@ -29,7 +32,8 @@ export default {
         theme: '3024-night',
         lineNumbers: true,
         line: true,
-        readOnly: true
+        readOnly: true,
+        scrollbarStyle: 'overlay'
       }
     }
   },
