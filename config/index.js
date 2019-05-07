@@ -16,11 +16,11 @@ module.exports = {
         target: function (env) {
           switch (env) {
             case 'alpha':
-             return 'http://localhost:8080/';
+             return 'http://localhost:8080/api/';
             default:
               return 'http://74.82.199.235:8088/api/';
           }
-        }(process.env.BUILD_REV),
+        }(process.env.NODE_ENV),
         changeOrigin: true,
         secure: false,
         pathRewrite: {
@@ -74,7 +74,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',
 
     /**
      * Source Maps
