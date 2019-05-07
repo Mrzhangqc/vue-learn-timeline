@@ -1,0 +1,72 @@
+{
+ "code": 200,
+ "result" : {
+  "data": [{
+	"cmd": "ssh-keygen -t rsa -C <邮箱地址>",
+	"desc": "本地创建SSH Key"
+  },{
+	"cmd": "git checkout -b (branchname)",
+	"desc": "创建分支 -> 在当前分支上创建了一个新分支"
+  },{
+  	"cmd": "git branch -d (branchname)",
+	"desc": "删除分支"
+  },{
+  	"cmd": "git merge",
+	"desc": "分支合并"
+  },{
+	"cmd": "git cherry-pick <commitId>",
+	"desc": "合并指定提交id到当前分支"
+  },{
+	"cmd": "git branch -r ",
+	"desc": "查看远程分支"
+  },{
+	"cmd": "git checkout <分支名> ",
+	"desc": "切换分支"
+  },{
+	"cmd": "git checkout -b master<本地分支> origin/master<远程分支>",
+	"desc": "拉取远程分支到本地(并创建本地分支)"
+  },{
+	"cmd": "git branch --set-upstream-to=origin/<branch> 本地分支 ",
+	"desc": "本地分支关联远程分支"
+  },{
+	"cmd": "git branch -vv",
+	"desc": "查看所有本地分支与远程分支关联关系"
+  },{
+	"cmd": "git reset --hard HEAD^",
+	"desc": "回退到上个版本"
+  },{
+	"cmd": "git reset --hard HEAD~n",
+	"desc": "回退到前n次提交之前"
+  },{
+	"cmd": "git reset --hard commit_id",
+	"desc": "退到/进到指定提交的id"
+  },{
+	"cmd": "git log",
+	"desc": "查看提交记录"
+  },{
+	"cmd": "git reflog ",
+	"desc": "查看历史提交版本 包括commit_id"
+  },{
+	"cmd": "git push origin HEAD --force",
+	"desc": "强推到远程"
+  },{
+	"cmd": "git stash",
+	"desc": "把所有未提交的修改（包括暂存的和非暂存的）都保存起来，用于后续恢复当前工作目录"
+  },{
+	"cmd": "git stash pop",
+	"desc": "恢复之前缓存的工作目录"
+  },{
+	"cmd": "git stash apply",
+	"desc": "将缓存堆栈中的stash多次应用到工作目录中，但并不删除stash拷贝"
+  },{
+	"cmd": "git stash list ",
+	"desc": "查看现有stash"
+  },{
+	"cmd": "git stash drop ",
+	"desc": "移除stash"
+  },{
+	"cmd": "git stash clear ",
+	"desc": "清空所有stash"
+  }]
+ }
+}

@@ -20,3 +20,4 @@ selenium-debug.log
 !static/
 !index.html
 !favicon.icon
+!api/
