@@ -2,7 +2,6 @@
 require('./check-versions')()
 
 process.env.NODE_ENV = 'production'
-process.env.API_ROOT = '"http://74.82.199.235:8088/api/"'//配置生产环境的API_ROOT
 
 const ora = require('ora')
 const rm = require('rimraf')
