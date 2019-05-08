@@ -80,7 +80,7 @@ module.exports = {
      * Source Maps
      */
 
-    productionSourceMap: true,
+    productionSourceMap: false, // npm run build 打包后，js文件会出现.map文件，文件很大很占空间，这里设置为false打包即不会出现.map文件
     // https://webpack.js.org/configuration/devtool/#production
     devtool: '#source-map',
 
