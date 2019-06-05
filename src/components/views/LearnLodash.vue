@@ -54,6 +54,11 @@ export default {
       background-color: #fff;
       padding: 10px;
       margin-top: 20px;
+      .grid-header{
+        a{
+          color: #366ed8
+        }
+      }
       .description{
         padding: 5px 5px 10px;
       }
@@ -65,7 +70,7 @@ export default {
     }
   }
 </style>
-<style>
+<style lang="less">
  .CodeMirror{
     height: 100px !important;
   }
