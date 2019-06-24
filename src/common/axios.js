@@ -3,7 +3,7 @@ import store from '../store/'
 
 // axios 配置
 axios.defaults.timeout = 1000 // default is `0` (no timeout)
-axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? '/api' : 'https://74.82.199.235:8088/api/'
+axios.defaults.baseURL = '/api'
 
 // You can cancel a request using a cancel token
 const CancelToken = axios.CancelToken
