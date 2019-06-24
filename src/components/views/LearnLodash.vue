@@ -1,5 +1,5 @@
 <template>
-  <el-row :gutter="20">
+  <el-row :gutter="20" v-loading="loading">
     <el-col :md="6" :lg="6" :sm="12" :xs="24" v-for="(item,index) in apiList" :key="index">
       <div class="grid-container">
         <div class="grid-header">
@@ -21,10 +21,12 @@
 import 'codemirror/theme/3024-night.css'
 import 'codemirror/addon/scroll/simplescrollbars.js'
 import 'codemirror/addon/scroll/simplescrollbars.css'
+
 export default {
   name: 'LearnLodash',
   data () {
     return {
+      loading: false,
       apiList: [],
       cmOptions: {
         tabSize: 4,
@@ -38,9 +40,12 @@ export default {
     }
   },
   created () {
+    this.loading = true
     this.$http.get('learnLodash.json').then(res => {
+      this.loading = false
       this.apiList = res.data
     }).catch(err => {
+      this.loading = false
       this.$alert(err)
     })
   }
@@ -61,11 +66,6 @@ export default {
       }
       .description{
         padding: 5px 5px 10px;
-      }
-      .example {
-        // padding: 10px 5px;
-        // color: #f1f1f1;
-        // background: #222831;
       }
     }
   }
