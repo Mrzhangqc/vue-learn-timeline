@@ -14,7 +14,8 @@ axios.interceptors.request.use(
   config => {
     config.cancelToken = source.token
     if (store.getters.token) {
-      config.headers.Authorization = `token ${store.getters.token}`
+      // config.headers.Authorization = `token ${store.getters.token}`
+      config.headers['X-Token'] = `${store.getters.token}`
     }
     return config
   },
