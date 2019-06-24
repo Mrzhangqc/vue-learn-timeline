@@ -79,7 +79,20 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      }
+      },
+      // {  
+      //   test: /\.styl$/,  
+      //   use: [  
+      //     'style-loader',  
+      //     {  
+      //       loader: 'css-loader',  
+      //       options: {  
+      //         minimize: process.env.NODE_ENV === 'production'  
+      //       }  
+      //     },  
+      //     'postcss-loader'
+      //   ]  
+      // }  
     ]
   },
   node: {
