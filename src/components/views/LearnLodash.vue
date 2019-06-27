@@ -65,6 +65,7 @@ export default {
         }
       }
       .description{
+        height: 50px;
         padding: 5px 5px 10px;
       }
     }
