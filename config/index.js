@@ -18,7 +18,7 @@ module.exports = {
             case 'alpha':
              return 'http://localhost:8080/api/';
             default:
-              return 'http://74.82.199.235:8088/vueTimeline/api/';
+              return 'http://74.82.199.235:8088/api/';
           }
         }(process.env.NODE_ENV),
         changeOrigin: true,
